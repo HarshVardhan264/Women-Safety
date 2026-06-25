@@ -1,28 +1,43 @@
-import React from 'react'
-import { NavLink, Button, ShieldIcon, tokens } from './ui'
+const links = [
+  { label: 'Home', href: '#home', active: true },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'About Us', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+]
 
-export function Navbar({ dark }) {
+const Navbar = () => {
   return (
-    <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 48px', background: dark ? '#020817' : '#fff', borderBottom: `1px solid ${dark ? '#1E293B' : '#F3F4F6'}`, position: 'sticky', top: 0, zIndex: 100, backdropFilter: 'blur(8px)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <div style={{ width: 34, height: 34, borderRadius: 8, background: tokens.orange, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <ShieldIcon size={18} />
+    <nav className="sticky top-0 z-30 border-b border-slate-100 bg-white/90 px-6 py-4 shadow-xs backdrop-blur transition duration-300">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="font-bold text-slate-900 text-3xl ">
+            Sakhi<span className="text-orange-500 pl-2 ">AI</span>
+          </div>
         </div>
-        <span style={{ fontWeight: 800, fontSize: 20, color: dark ? '#F1F5F9' : tokens.navy }}>Sakhi<span style={{ color: tokens.orange }}>AI</span></span>
-      </div>
-      <div style={{ display: 'flex', gap: 32 }}>
-        {['Home', 'Features', 'How It Works', 'About Us', 'Contact'].map((item, i) => (
-          <NavLink key={item} active={i === 0} dark={dark}>{item}</NavLink>
-        ))}
-      </div>
-      <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-        <button style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 14px', background: 'transparent', border: `1.5px solid ${dark ? '#334155' : '#E5E7EB'}`, borderRadius: 8, cursor: 'pointer', fontSize: 13, fontWeight: 500, color: dark ? '#CBD5E1' : '#374151' }}>🎧 24/7 Support</button>
-        <Button variant="outline" dark={dark}>Log In</Button>
-        <Button variant="primary">Sign Up</Button>
+
+        <div className="hidden items-center gap-10 md:flex ">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={`text-base font-medium transition ${link.active ? 'border-b-2 border-orange-500 text-orange-600' : 'text-slate-600 hover:text-slate-900'}`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-5">
+          <button className="rounded-2xl border border-slate-300 bg-transparent px-6 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">
+            Log In
+          </button>
+          <button className="rounded-2xl bg-orange-500 px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600">
+            Sign Up
+          </button>
+        </div>
       </div>
     </nav>
   )
 }
 
 export default Navbar
-
