@@ -101,7 +101,7 @@ const Anonymous = () => {
 
             <button
               type="button"
-              onClick={step === 3 ? () => alert('Complaint submitted!') : handleNext}
+              onClick={step === 3 ? () => navigate('/completion') : handleNext}
               className="rounded-3xl bg-violet-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-violet-800"
             >
               {step === 3 ? 'Submit Complaint' : 'Save & Next →'}

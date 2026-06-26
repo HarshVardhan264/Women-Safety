@@ -109,7 +109,7 @@ const IdentityReport = () => {
 
             <button
               type="button"
-              onClick={step === 4 ? () => alert('Complaint submitted!') : handleNext}
+              onClick={step === 4 ? () => navigate('/completion') : handleNext}
               className="rounded-3xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-700"
             >
               {step === 4 ? 'Submit Complaint' : 'Save & Next →'}
