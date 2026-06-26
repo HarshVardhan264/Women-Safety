@@ -46,7 +46,7 @@ const HomePage = () => {
                 {/* Buttons */}
                 <div className="z-20 mt-5 flex flex-col gap-8 sm:flex-row">
 
-                    <button onClick={() => navigate("/complaint")} className="flex items-center gap-4 rounded-2xl border border-orange-400 px-7 py-2 shadow-lg hover:shadow-xl  bg-[#f2d3c8]">
+                    <button onClick={() => navigate("/complaint")} className="flex items-center gap-4 rounded-2xl border border-orange-400 px-7 py-2 shadow-lg hover:shadow-xl  bg-[#f2d3c8]/80">
                         <span className="text-3xl bg-blend-color-burn">📋</span>
                         <span className="font-bold text-lg ">
                             File a Complaint
@@ -54,7 +54,7 @@ const HomePage = () => {
                         <ArrowRight className="h-15 w-10 pl-2 text-orange-500" />
                     </button>
 
-                    <button className="flex items-center gap-4 rounded-2xl border border-blue-300 bg-blue-100 px-7 py-2 shadow-lg hover:shadow-xl">
+                    <button className="flex items-center gap-4 rounded-2xl border border-blue-300 bg-blue-100/80 px-7 py-2 shadow-lg hover:shadow-xl">
                         <span className="text-3xl">🤖</span>
                         <span className="font-bold text-[#0A1E5E] text-lg">
                             AI Safety Assistant

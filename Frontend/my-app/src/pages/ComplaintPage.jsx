@@ -1,8 +1,18 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import Navbar from '../components/Navbar'
-import { NotebookPen  } from "lucide-react";
+import { NotebookPen } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const ComplaintPage = () => {
+  const navigate = useNavigate()
+  const [agreed, setAgreed] = useState(false)
+
+  const handleContinue = (path) => {
+    if (agreed) {
+      navigate(path)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#FEF7F2] text-slate-900">
       <Navbar />
@@ -52,11 +62,22 @@ const ComplaintPage = () => {
               National police helpline number is 112. National women helpline number is 181 and Cyber Crime Helpline is 1930.
             </p>
           </div>
-          <div className="mt-8 flex items-start gap-4 rounded-3xl border border-orange-100 bg-orange-50/80 p-6">
-            <input id="agree" type="checkbox" className="mt-1 h-5 w-5 rounded border-slate-300 text-orange-500 focus:ring-orange-400" />
-            <label htmlFor="agree" className="text-sm leading-7 text-slate-700">
-              I have read and agree to the above terms and conditions.
+          <div className="mt-8 flex flex-col gap-4 rounded-3xl border border-orange-100 bg-orange-50/80 p-6">
+            <label className="flex items-start gap-3">
+              <input
+                id="agree"
+                type="checkbox"
+                checked={agreed}
+                onChange={(event) => setAgreed(event.target.checked)}
+                className="mt-1 h-5 w-5 rounded border-slate-300 text-orange-500 focus:ring-orange-400"
+              />
+              <span className="text-sm leading-7 text-slate-700">
+                I have read and agree to the above terms and conditions.
+              </span>
             </label>
+            {!agreed && (
+              <p className="text-sm text-orange-700">Please accept the terms to continue with reporting.</p>
+            )}
           </div>
         </section>
 
@@ -76,7 +97,11 @@ const ComplaintPage = () => {
               <li>• No personal details required</li>
               <li>• Track your complaint using a unique ID</li>
             </ul>
-            <button className="mt-6 w-full rounded-3xl bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
+            <button
+              onClick={() => handleContinue('/anonymous')}
+              disabled={!agreed}
+              className={`mt-6 w-full rounded-3xl px-5 py-3 text-sm font-semibold text-white transition ${agreed ? 'bg-orange-500 hover:bg-orange-600' : 'cursor-not-allowed bg-orange-300'}`}
+            >
               Continue Anonymously →
             </button>
           </div>
@@ -96,7 +121,11 @@ const ComplaintPage = () => {
               <li>• Receive updates on your complaint</li>
               <li>• Authorities can contact you if needed</li>
             </ul>
-            <button className="mt-6 w-full rounded-3xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-700">
+            <button
+              onClick={() => handleContinue('/identity')}
+              disabled={!agreed}
+              className={`mt-6 w-full rounded-3xl px-5 py-3 text-sm font-semibold text-white transition ${agreed ? 'bg-sky-600 hover:bg-sky-700' : 'cursor-not-allowed bg-sky-300'}`}
+            >
               Continue with My Details →
             </button>
           </div>
