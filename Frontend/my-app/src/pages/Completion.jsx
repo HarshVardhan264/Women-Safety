@@ -1,10 +1,31 @@
-import Navbar from '../components/Navbar'
-import { CheckCircle2 } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import Navbar from "../components/Navbar";
+import { CheckCircle2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Completion = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#FEF7F2]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="h-14 w-14 animate-spin rounded-full border-4 border-slate-300 border-t-slate-900"></div>
+          <p className="text-slate-600 font-medium">
+            Submitting your complaint...
+          </p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-[#FEF7F2] text-slate-900">
       <Navbar />
@@ -13,34 +34,46 @@ const Completion = () => {
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
             <CheckCircle2 className="h-10 w-10" />
           </div>
-          <h1 className="text-3xl font-black text-slate-950 sm:text-4xl">Your Complaint has been Submitted Successfully!</h1>
+          <h1 className="text-3xl font-black text-slate-950 sm:text-4xl">
+            Your Complaint has been Submitted Successfully!
+          </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600">
-            Thank you for reporting. Your complaint has been recorded and will be reviewed by our team.
+            Thank you for reporting. Your complaint has been recorded and will
+            be reviewed by our team.
           </p>
           <div className="mx-auto mt-10 max-w-md rounded-3xl border border-slate-200 bg-slate-50 p-6 text-left text-slate-800">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Your Complaint ID</p>
-            <p className="mt-3 text-3xl font-extrabold text-slate-950">WS-003</p>
-            <p className="mt-2 text-sm text-slate-600">Please note down your Complaint ID to track the status of your complaint.</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Your Complaint ID
+            </p>
+            <p className="mt-3 text-3xl font-extrabold text-slate-950">
+              WS-003
+            </p>
+            <p className="mt-2 text-sm text-slate-600">
+              Please note down your Complaint ID to track the status of your
+              complaint.
+            </p>
           </div>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <button
-              onClick={() => navigate('/track')}
+              onClick={() => navigate("/track")}
               className="rounded-3xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-950"
             >
               Track Complaint Status
             </button>
             <button
-              onClick={() => navigate('/')}
+              onClick={() => navigate("/")}
               className="rounded-3xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
             >
               Go to Home
             </button>
           </div>
-          <p className="mt-8 text-sm text-slate-500">Your information is safe and secure with us.</p>
+          <p className="mt-8 text-sm text-slate-500">
+            Your information is safe and secure with us.
+          </p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Completion
+export default Completion;

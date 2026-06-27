@@ -30,7 +30,6 @@ const register = asyncHandler(async (req, res) => {
   });
 });
 
-// POST /api/auth/login
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -55,7 +54,6 @@ const login = asyncHandler(async (req, res) => {
   });
 });
 
-// GET /api/auth/me
 const getProfile = asyncHandler(async (req, res) => {
   res.json({ success: true, data: req.user });
 });
