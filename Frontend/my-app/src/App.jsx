@@ -7,6 +7,8 @@ import IdentityReport from './pages/IdentityReport'
 import Completion from './pages/Completion'
 import TrackComplaint from './pages/TrackComplaint'
 import Chatbot from './pages/Chatbot'
+import Contact from './pages/Contact'
+import About from './pages/About'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/completion" element={<Completion />} />
         <Route path="/track" element={<TrackComplaint />} />
         <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   )
