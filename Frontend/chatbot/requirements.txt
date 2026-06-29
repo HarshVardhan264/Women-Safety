@@ -1,41 +1,52 @@
+# ===========================
 # FastAPI Backend
+# ===========================
 fastapi
 uvicorn[standard]
 python-dotenv
 pydantic
 
-# LangChain
+# ===========================
+# LangChain & RAG
+# ===========================
 langchain
 langchain-core
 langchain-community
-langchain-text-splitters
-
-# Mistral AI
 langchain-mistralai
-mistralai
-
-# Vector Database
-chromadb
+langchain-huggingface
+langchain-text-splitters
 langchain-chroma
 
-# Embeddings
-sentence-transformers
-langchain-huggingface
-transformers
-torch
+# ===========================
+# Vector Database
+# ===========================
+chromadb
 
-# PDF Loader
+# ===========================
+# Embedding Model
+# ===========================
+sentence-transformers
+torch
+transformers
+
+# ===========================
+# PDF Loading
+# ===========================
 pypdf
 
+# ===========================
+# Telegram Bot
+# ===========================
+python-telegram-bot==21.10
+
+# ===========================
+# Database
+# ===========================
+sqlite-utils
+
+# ===========================
 # Utilities
+# ===========================
 numpy
 tqdm
-
-# Spell Correction
-pyspellchecker
-
-# Markdown (if generating markdown responses)
-markdown
-
-# HTTP Client
-httpx
+requests
