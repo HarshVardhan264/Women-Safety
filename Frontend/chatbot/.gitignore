@@ -1,0 +1,63 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ===========================
+# Chroma Vector Database
+# ===========================
+database/vectorstore/
+chroma/
+chroma_db/
+
+# ===========================
+# Cached Models
+# ===========================
+.cache/
+huggingface/
+
+# ===========================
+# Build Files
+# ===========================
+build/
+dist/
+*.egg-info/
+
+# ===========================
+# Temporary Files
+# ===========================
+*.tmp
+*.bak
+*.swp

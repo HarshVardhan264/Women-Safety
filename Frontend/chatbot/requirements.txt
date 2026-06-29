@@ -1,0 +1,41 @@
+# FastAPI Backend
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+
+# LangChain
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# Mistral AI
+langchain-mistralai
+mistralai
+
+# Vector Database
+chromadb
+langchain-chroma
+
+# Embeddings
+sentence-transformers
+langchain-huggingface
+transformers
+torch
+
+# PDF Loader
+pypdf
+
+# Utilities
+numpy
+tqdm
+
+# Spell Correction
+pyspellchecker
+
+# Markdown (if generating markdown responses)
+markdown
+
+# HTTP Client
+httpx
