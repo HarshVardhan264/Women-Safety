@@ -1,5 +1,10 @@
-# 🛡️ SafeHer – AI Powered Women Safety Platform
+<div align="center">
+# 🛡️ SakhiAI – Women's Safety Platform
 
+### Empowering Women Through AI, Emergency Assistance & Digital Safety
+
+<img src="Frontend/my-app/public/logo.png" width="270"/>
+ 
 <p align="center">
   <img src="https://img.shields.io/badge/React-Frontend-61DAFB?logo=react&logoColor=white">
   <img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js&logoColor=white">
@@ -11,12 +16,11 @@
   <img src="https://img.shields.io/badge/ChromaDB-Vector%20Store-success">
   <img src="https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white">
 </p>
-
----
+</div>
 
 # 📖 Overview
 
-**SafeHer** is an AI-powered Women Safety Platform designed to provide legal assistance, emergency support, secure complaint filing, and NGO assistance through an intelligent web application and Telegram bot.
+**SakhiAI** is an AI-powered Women Safety Platform designed to provide legal assistance, emergency support, secure complaint filing, and NGO assistance through an intelligent web application and Telegram bot.
 
 The platform combines Artificial Intelligence, Retrieval-Augmented Generation (RAG), verified legal documents, and emergency communication to help women receive timely guidance and support.
 
@@ -234,6 +238,15 @@ Women-Safety/
 
 ---
 
+## AI Technologies
+
+- Retrieval Augmented Generation (RAG)
+- Semantic Search
+- Embedding Models
+- Prompt Engineering
+
+---
+
 # 🚀 Running the Project
 
 ## 1. Backend
@@ -294,7 +307,19 @@ cd Frontend/chatbot
 python -m telegram_bot.bot
 ```
 
+# 🔑 Environment Variables
+
+Create `.env`
+
+```
+MISTRAL_API_KEY=your_key
+
+BOT_TOKEN=telegram_bot_token
+
+MONGODB_URI=your_mongodb_uri
+```
 ---
+
 
 # 💬 AI Sakhi Response Flow
 
@@ -340,8 +365,37 @@ python -m telegram_bot.bot
 
 ---
 
+# ❤️ Why AI Sakhi?
+
+Many women hesitate to seek help because of fear, lack of legal knowledge, or concerns about privacy.
+
+AI Sakhi aims to bridge this gap by providing:
+
+- Immediate safety guidance
+- Simple legal explanations
+- Anonymous reporting
+- Emergency assistance
+- Trusted NGO connections
+- AI-powered legal support available 24×7
+
+---
+
+
 # 👨‍💻 Developed By
 
-**SafeHer Team**
+**SakhiAI Team**
 
-An AI-powered Women Safety Platform built using **React**, **Node.js**, **Express.js**, **FastAPI**, **LangChain**, **Mistral AI**, **ChromaDB**, **MongoDB**, and the **Telegram Bot API** to provide legal guidance, emergency assistance, and secure complaint management.
+An AI-powered Women Safety Platform built using **React**, **Node.js**, **Express.js**, **FastAPI**, **LangChain**, **Mistral AI**, **ChromaDB**, **MongoDB**, and the **Telegram Bot API** to provide legal guidance, emergency assistance, and secure complaint management. 
+
+Developed with ❤️ to create a safer digital environment for women.
+
+
+
+
+<div align="center">
+
+### 🌸 Empowering Women Through Technology
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+</div>
